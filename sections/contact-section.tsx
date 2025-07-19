@@ -19,10 +19,10 @@ const fadeInUp = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: "easeOut",
     },
   },
-}
+} as const;
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -31,10 +31,10 @@ const staggerContainer = {
     transition: {
       staggerChildren: 0.1,
       delayChildren: 0.2,
-      ease: [0.22, 1, 0.36, 1],
+      ease: "easeOut",
     },
   },
-}
+} as const;;
 
 export default function ContactSection({}: ContactSectionProps) {
   const [ref, isInView] = useIntersectionObserver({

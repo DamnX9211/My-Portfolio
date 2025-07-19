@@ -1,5 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
+import { cubicBezier } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -12,6 +13,8 @@ import { OptimizedImage } from "@/components/optimized-image"
 type ProjectsSectionProps = {}
 
 // Animation variants
+const customEase = cubicBezier(0.22, 1, 0.36, 1)
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -19,10 +22,10 @@ const fadeInUp = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: customEase,
     },
   },
-}
+} as const;
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -31,10 +34,10 @@ const staggerContainer = {
     transition: {
       staggerChildren: 0.1,
       delayChildren: 0.2,
-      ease: [0.22, 1, 0.36, 1],
+      ease: customEase,
     },
   },
-}
+} as const;
 
 export default function ProjectsSection({}: ProjectsSectionProps) {
   const [ref, isInView] = useIntersectionObserver({
@@ -140,7 +143,17 @@ export default function ProjectsSection({}: ProjectsSectionProps) {
 }
 
 // Project Card Component
-function ProjectCard({ project, index, inView }) {
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  demoLink: string;
+  codeLink: string;
+  category: string;
+}
+
+function ProjectCard({ project, index, inView }: { project: Project; index: number; inView: boolean }) {
   return (
     <motion.div variants={fadeInUp} className="group relative" whileHover={{ y: -10 }}>
       <motion.div

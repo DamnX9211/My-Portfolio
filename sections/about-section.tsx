@@ -8,9 +8,12 @@ import { SectionHeading } from "@/components/section-heading"
 
 export default function AboutSection() {
   const [ref, isInView] = useIntersectionObserver({
+    
+    root: null, // Add this line
     threshold: 0.1,
+    rootMargin: '0px', // Add this line
     freezeOnceVisible: true,
-  })
+  });
 
   const stats = [
     { number: "5+", label: "Years Experience", icon: <Zap className="h-5 w-5" /> },

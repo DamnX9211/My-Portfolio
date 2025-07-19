@@ -1,12 +1,26 @@
 "use client"
 import { motion } from "framer-motion"
+import { cubicBezier } from "framer-motion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer"
 import { SectionHeading } from "@/components/section-heading"
 
+
+interface name {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  demoLink: string;
+  codeLink: string;
+  category: string;
+}
 type SkillsSectionProps = {}
 
 // Animation variants
+
+const customEase = cubicBezier(0.22, 1, 0.36, 1)
+
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
@@ -14,10 +28,10 @@ const staggerContainer = {
     transition: {
       staggerChildren: 0.1,
       delayChildren: 0.2,
-      ease: [0.22, 1, 0.36, 1],
+      ease: customEase,
     },
   },
-}
+} as const;
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -26,10 +40,10 @@ const fadeInUp = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: customEase,
     },
   },
-}
+} as const;
 
 export default function SkillsSection({}: SkillsSectionProps) {
   const [ref, isInView] = useIntersectionObserver({
@@ -98,7 +112,7 @@ export default function SkillsSection({}: SkillsSectionProps) {
                   { name: "HTML/CSS", level: 92 },
                   { name: "Node.js", level: 80 },
                 ].map((skill, index) => (
-                  <SkillBar key={index} name={skill.name} level={skill.level} index={index} inView={isInView} />
+                  <SkillBar key={index} name={skill.name} level={skill.level} index={index} inView={isInView}  />
                 ))}
               </motion.div>
 
@@ -138,7 +152,7 @@ export default function SkillsSection({}: SkillsSectionProps) {
                   { name: "TensorFlow", level: 75 },
                   { name: "Data Visualization", level: 87 },
                 ].map((skill, index) => (
-                  <SkillBar key={index} name={skill.name} level={skill.level} index={index} inView={isInView} />
+                  <SkillBar key={index} name={skill.name} level={skill.level} index={index} inView={isInView}  />
                 ))}
               </motion.div>
 
@@ -328,8 +342,10 @@ export default function SkillsSection({}: SkillsSectionProps) {
   )
 }
 
+
+
 // Skill Bar Component
-function SkillBar({ name, level, index, inView }) {
+function SkillBar({ name, level, index, inView }: { name: string; level: number; index: number; inView: boolean;  }) {
   return (
     <motion.div variants={fadeInUp} className="space-y-2">
       <div className="flex justify-between">

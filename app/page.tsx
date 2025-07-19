@@ -20,8 +20,7 @@ export default function Page() {
   // State management
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [totalImages] = useState(6)
-  const [imagesLoaded] = useState(0)
+ 
 
 
 
@@ -119,12 +118,7 @@ export default function Page() {
               <span className="mr-2">Rohit Kumar</span>
               <Sparkles className="h-8 w-8 text-primary" />
             </motion.div>
-            <motion.div
-              initial={{ width: "0%" }}
-              animate={{ width: `${(imagesLoaded / totalImages) * 100}%` }}
-              className="h-1 bg-primary mt-8 rounded-full"
-              style={{ width: "200px" }}
-            />
+            
           </motion.div>
         )}
       </AnimatePresence>

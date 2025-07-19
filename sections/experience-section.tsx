@@ -6,13 +6,37 @@ import { MapPin, Calendar, TrendingUp, Award, Code2 } from "lucide-react"
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer"
 import { SectionHeading } from "@/components/section-heading"
 
+interface Metrics {
+  [key: string]: string | number;
+}
+
+interface Experience {
+  title: string;
+  company: string;
+  period: string;
+  location: string;
+  type: string;
+  description: string;
+  achievements: string[];
+  skills: string[];
+  metrics: Metrics;
+  color: string;
+}
+
+interface ExperienceCardProps {
+  experience: Experience;
+  index: number;
+  inView: boolean;
+  isEven: boolean;
+}
+
 export default function ExperienceSection() {
   const [ref, isInView] = useIntersectionObserver({
     threshold: 0.1,
     freezeOnceVisible: true,
   })
 
-  const experiences = [
+  const experiences: Experience[] = [
     {
       title: "Senior Full Stack Developer",
       company: "TechInnovate Solutions",
@@ -148,7 +172,7 @@ export default function ExperienceSection() {
 }
 
 // Enhanced Experience Card Component
-function ExperienceCard({ experience, index, inView, isEven }) {
+function ExperienceCard({ experience, index, inView, isEven }: ExperienceCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}

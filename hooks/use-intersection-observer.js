@@ -4,11 +4,12 @@ import { useEffect, useState, useRef } from "react"
 
 /**
  * Custom hook for intersection observer with performance optimizations
- * @param {Object} options - IntersectionObserver options
- * @param {number} options.threshold - Threshold for triggering the callback
- * @param {string} options.root - Root element to observe from
- * @param {string} options.rootMargin - Margin around the root
- * @param {boolean} options.freezeOnceVisible - Whether to stop observing once visible
+ * @typedef {Object} UseIntersectionObserverProps
+ * @property {Element|null} [root] - Root element to observe from
+ * @property {number} [threshold] - Threshold for triggering the callback
+ * @property {string} [rootMargin] - Margin around the root
+ * @property {boolean} [freezeOnceVisible] - Whether to stop observing once visible
+ * @param {UseIntersectionObserverProps} options - IntersectionObserver options
  * @returns {[React.RefObject, boolean]} - [ref, isIntersecting]
  */
 export function useIntersectionObserver({
