@@ -198,6 +198,20 @@ export default function ContactSection({}: ContactSectionProps) {
                 </div>
               </motion.div>
             </div>
+            <a
+            href="/https://drive.google.com/file/d/10aaEhGdPmFRWDPQyuTKNnGyc6hWqqTJf/view?usp=sharing" // Path relative to the public directory
+           // Suggested filename for download
+            className="mt-2 inline-flex items-center px-43 py-2 text-sm font-medium text-gray-900 bg-primary hover:bg-primary/90 transition-colors duration-200 rounded-xl shadow-sm"
+            aria-label="Download Resume"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {/* You can add an icon here if you want, e.g., using Heroicons: */}
+            {/* <svg className="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-11.25a.75.75 0 00-1.5 0v4.06L7.22 9.22a.75.75 0 00-1.06 1.06l3.5 3.5a.75.75 0 001.06 0l3.5-3.5a.75.75 0 00-1.06-1.06L10.75 10.81V6.75z" clipRule="evenodd" />
+            </svg> */}
+            Download My Resume
+          </a>
           </motion.div>
 
           <motion.div
