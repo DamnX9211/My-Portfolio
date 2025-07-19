@@ -33,7 +33,7 @@ export default function HeroSection() {
           <path d="M9 18c-4.51 2-5-2-7-2"></path>
         </svg>
       ),
-      url: "https://github.com",
+      url: "https://github.com/DamnX9211",
       label: "GitHub",
     },
     {
@@ -55,7 +55,7 @@ export default function HeroSection() {
           <circle cx="4" cy="4" r="2"></circle>
         </svg>
       ),
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/rohit-kumar-99abc99/",
       label: "LinkedIn",
     },
     {

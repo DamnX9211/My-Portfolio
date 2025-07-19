@@ -107,7 +107,7 @@ export default function ContactSection({}: ContactSectionProps) {
                   </motion.div>
                   <div>
                     <p className="text-sm text-white/50">Location</p>
-                    <p className="font-medium">San Francisco, California</p>
+                    <p className="font-medium">Durgapur, West bengal</p>
                   </div>
                 </motion.div>
 
@@ -126,7 +126,7 @@ export default function ContactSection({}: ContactSectionProps) {
                   </motion.div>
                   <div>
                     <p className="text-sm text-white/50">Email</p>
-                    <p className="font-medium">rohit.kumar@example.com</p>
+                    <p className="font-medium">rohitkuumar1995@gmail.com</p>
                   </div>
                 </motion.div>
 
@@ -145,7 +145,7 @@ export default function ContactSection({}: ContactSectionProps) {
                   </motion.div>
                   <div>
                     <p className="text-sm text-white/50">Phone</p>
-                    <p className="font-medium">+1 (555) 123-4567</p>
+                    <p className="font-medium">+91 8077783582</p>
                   </div>
                 </motion.div>
               </div>
@@ -161,12 +161,12 @@ export default function ContactSection({}: ContactSectionProps) {
                   {[
                     {
                       icon: <Github className="h-5 w-5" aria-hidden="true" />,
-                      url: "https://github.com",
+                      url: "https://github.com/DamnX9211",
                       label: "GitHub",
                     },
                     {
                       icon: <Linkedin className="h-5 w-5" aria-hidden="true" />,
-                      url: "https://linkedin.com",
+                      url: "https://www.linkedin.com/in/rohit-kumar-99abc99/",
                       label: "LinkedIn",
                     },
                     {
