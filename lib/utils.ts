@@ -11,7 +11,7 @@ export function cn(...inputs: ClassValue[]) {
 /**
  * Debounce function to limit the rate at which a function can fire
  */
-export function debounce<T extends (...args: any[]) => any>(func: T, wait: number): (...args: Parameters<T>) => void {
+export function debounce<T extends (...args: unknown[]) => any>(func: T, wait: number): (...args: Parameters<T>) => void {
   let timeout: ReturnType<typeof setTimeout> | null = null
 
   return (...args: Parameters<T>) => {
@@ -30,7 +30,7 @@ export function debounce<T extends (...args: any[]) => any>(func: T, wait: numbe
 /**
  * Throttle function to limit the rate at which a function can fire
  */
-export function throttle<T extends (...args: any[]) => any>(func: T, limit: number): (...args: Parameters<T>) => void {
+export function throttle<T extends (...args: unknown[]) => any>(func: T, limit: number): (...args: Parameters<T>) => void {
   let inThrottle = false
 
   return (...args: Parameters<T>) => {
