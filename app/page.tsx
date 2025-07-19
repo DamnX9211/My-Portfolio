@@ -5,7 +5,6 @@ import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Code, Github, Linkedin, Twitter, Menu, X, User, Layers, MessageSquare, Sparkles, Award } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { useMediaQuery } from "@/hooks/use-media-query"
 import { useScrollSpy } from "@/hooks/use-scroll-spy"
 import Link from "next/link"
 
@@ -21,8 +20,8 @@ export default function Page() {
   // State management
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [imagesLoaded, setImagesLoaded] = useState(0)
   const [totalImages] = useState(6)
+  const [imagesLoaded] = useState(0)
 
 
 
