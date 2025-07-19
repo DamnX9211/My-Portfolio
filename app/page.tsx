@@ -24,8 +24,7 @@ export default function Page() {
   const [imagesLoaded, setImagesLoaded] = useState(0)
   const [totalImages] = useState(6)
 
-  // Responsive hooks
-  const isDesktop = useMediaQuery("(min-width: 768px)")
+
 
   // Scroll tracking
   const { scrollYProgress } = useScroll()
@@ -78,16 +77,7 @@ export default function Page() {
     { icon: <Twitter className="h-5 w-5" />, url: "https://twitter.com", label: "Twitter" },
   ]
 
-  // Track image loading progress
-  const handleImageLoad = useCallback(() => {
-    setImagesLoaded((prev) => {
-      const newCount = prev + 1
-      if (newCount >= totalImages) {
-        setTimeout(() => setIsLoaded(true), 300)
-      }
-      return newCount
-    })
-  }, [totalImages])
+  
 
   // Initialize loading state
   useEffect(() => {
