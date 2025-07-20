@@ -47,13 +47,13 @@ export default function ProjectsSection({}: ProjectsSectionProps) {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Car Rental Website",
       description:
-        "A full-stack e-commerce solution with product management, user authentication, and payment processing.",
+        "A full-stack car rental solution with vehicle management, user authentication, and booking system.",
       image: "/placeholder.svg?height=300&width=400",
       tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      demoLink: "https://example.com",
-      codeLink: "https://github.com",
+      demoLink: "https://car-rental-murex-six.vercel.app/",
+      codeLink: "https://github.com/DamnX9211/Car-Rental",
       category: "Web Development",
     },
     {
