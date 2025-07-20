@@ -50,8 +50,8 @@ export default function ProjectsSection({}: ProjectsSectionProps) {
       title: "Car Rental Website",
       description:
         "A full-stack car rental solution with vehicle management, user authentication, and booking system.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
+      image: "/car-rental.jpg?height=300&width=400",
+      tags: ["Next", "Node.js", "MongoDB", "Stripe"],
       demoLink: "https://car-rental-murex-six.vercel.app/",
       codeLink: "https://github.com/DamnX9211/Car-Rental",
       category: "Web Development",

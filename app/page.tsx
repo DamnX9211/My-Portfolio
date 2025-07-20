@@ -13,7 +13,7 @@ import HeroSection from "@/sections/hero-section"
 import AboutSection from "@/sections/about-section"
 import SkillsSection from "@/sections/skills-section"
 import ProjectsSection from "@/sections/projects-section"
-import ExperienceSection from "@/sections/experience-section"
+
 import ContactSection from "@/sections/contact-section"
 
 export default function Page() {
@@ -310,7 +310,7 @@ export default function Page() {
           <AboutSection />
           <SkillsSection />
           <ProjectsSection />
-          <ExperienceSection />
+          
           <ContactSection />
         </main>
 
