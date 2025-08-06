@@ -10,7 +10,7 @@ import { useIntersectionObserver } from "@/hooks/use-intersection-observer"
 import { SectionHeading } from "@/components/section-heading"
 import { OptimizedImage } from "@/components/optimized-image"
 
-type ProjectsSectionProps = {}
+type ProjectsSectionProps = object
 
 // Animation variants
 const customEase = cubicBezier(0.22, 1, 0.36, 1)
@@ -57,50 +57,50 @@ export default function ProjectsSection({}: ProjectsSectionProps) {
       category: "Web Development",
     },
     {
-      title: "Customer Segmentation Analysis",
+      title: "Tesla Stock Price Financial Analysis",
       description:
-        "Data analysis project that segments customers based on purchasing behavior using clustering algorithms.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
-      demoLink: "https://example.com",
-      codeLink: "https://github.com",
+        " A data analysis project using Python and Pandas to analyze Tesla's stock price and identify trends.",
+      image: "/tesla.jpg?height=300&width=400",
+      tags: ["Python", "Numpy", "Pandas", "Matplotlib"],
+      demoLink: "https://github.com/DamnX9211/Tesla_Stock_Price_Financial_Analysis",
+      codeLink: "https://github.com/DamnX9211/Tesla_Stock_Price_Financial_Analysis",
       category: "Data Science",
     },
     {
-      title: "Real-time Dashboard",
+      title: "Netflix Movies & TV Shows Clustering & EDA",
       description:
-        "Interactive dashboard for monitoring business metrics with real-time updates and data visualization.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["React", "D3.js", "Socket.io", "Express"],
-      demoLink: "https://example.com",
-      codeLink: "https://github.com",
-      category: "Web Development",
+        "An exploratory data analysis project that clusters Netflix movies and TV shows based on various features.",
+      image: "/netflix.jpg?height=800&width=400",
+      tags: ["Python", "Pandas", "Numpy", "EDA"],
+      demoLink: "https://github.com/DamnX9211/Netflix_Movies_and_TVshows_Clustring",
+      codeLink: "https://github.com/DamnX9211/Netflix_Movies_and_TVshows_Clustring",
+      category: "Data Science",
     },
     {
-      title: "Sentiment Analysis Tool",
-      description: "NLP-based tool that analyzes customer reviews and feedback to determine sentiment and key topics.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["Python", "NLTK", "TensorFlow", "Flask"],
-      demoLink: "https://example.com",
-      codeLink: "https://github.com",
+      title: "Delhivery Analysis",
+      description: "A comprehensive analysis of Delhivery's logistics data using Python and machine learning.",
+      image: "/delhivery.jpg?height=300&width=400",
+      tags: ["Python", "Pandas", "Seaborn", "Numpy", "Matplotlib"],
+      demoLink: "https://github.com/DamnX9211/Delhivery-Analysis",
+      codeLink: "https://github.com/DamnX9211/Delhivery-Analysis",
       category: "Data Science",
     },
     {
       title: "Portfolio Website",
       description: "Modern, responsive portfolio website built with Next.js and Tailwind CSS (this website).",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/portfolio1.jpg?height=300&width=400",
       tags: ["Next.js", "Tailwind CSS", "React", "Framer Motion"],
-      demoLink: "https://example.com",
-      codeLink: "https://github.com",
+      demoLink: "https://my-portfolio-1-plum.vercel.app/",
+      codeLink: "https://github.com/DamnX9211/MyPortfolio",
       category: "Web Development",
     },
     {
-      title: "Predictive Maintenance System",
-      description: "Machine learning system that predicts equipment failures before they occur based on sensor data.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["Python", "Scikit-learn", "TensorFlow", "Docker"],
-      demoLink: "https://example.com",
-      codeLink: "https://github.com",
+      title: "Time Series Analysis of Stock Data",
+      description: "A comprehensive analysis of stock price movements using time series techniques.",
+      image: "/time-series.png?height=300&width=400",
+      tags: ["Python", "Pandas", "Numpy", "Matplotlib", "Seaborn"],
+      demoLink: "https://github.com/DamnX9211/Time_Series_Analysis/blob/main/Time_Series_Analysis.ipynb",
+      codeLink: "https://github.com/DamnX9211/Time_Series_Analysis",
       category: "Data Science",
     },
   ]
@@ -153,7 +153,7 @@ interface Project {
   category: string;
 }
 
-function ProjectCard({ project, index, inView }: { project: Project; index: number; inView: boolean }) {
+function ProjectCard({ project }: { project: Project; index: number; inView: boolean }) {
   return (
     <motion.div variants={fadeInUp} className="group relative" whileHover={{ y: -10 }}>
       <motion.div
@@ -165,7 +165,7 @@ function ProjectCard({ project, index, inView }: { project: Project; index: numb
       <Card className="relative overflow-hidden border-white/10 bg-black/50 backdrop-blur-sm">
         <div className="relative h-48 overflow-hidden">
           <OptimizedImage
-            src={project.image || "/placeholder.svg"}
+            src={project.image}
             alt={project.title}
             width={400}
             height={300}
@@ -177,7 +177,7 @@ function ProjectCard({ project, index, inView }: { project: Project; index: numb
             whileHover={{ opacity: 0.6 }}
             aria-hidden="true"
           />
-          <Badge className="absolute top-2 right-2 bg-primary text-white">{project.category}</Badge>
+          <Badge className="absolute top-2 right-2 bg-transparent text-white/70">{project.category}</Badge>
 
           <motion.div
             className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300"

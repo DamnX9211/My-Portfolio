@@ -9,7 +9,7 @@ import { useIntersectionObserver } from "@/hooks/use-intersection-observer"
 import { SectionHeading } from "@/components/section-heading"
 import { AnimatedButton } from "@/components/animated-button"
 
-type ContactSectionProps = {}
+type ContactSectionProps = object
 
 // Animation variants
 const fadeInUp = {
